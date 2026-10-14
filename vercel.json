@@ -1,0 +1,171 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/blank-1",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/blank-2",
+      "destination": "/bildergalerie",
+      "permanent": true
+    },
+    {
+      "source": "/blank",
+      "destination": "/orchester",
+      "permanent": true
+    },
+    {
+      "source": "/blank-4",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blank-3",
+      "destination": "/archiv",
+      "permanent": true
+    },
+    {
+      "source": "/dasdoppeltelottchen",
+      "destination": "/das-doppelte-lottchen",
+      "permanent": true
+    },
+    {
+      "source": "/blank-5",
+      "destination": "/wiener-blut",
+      "permanent": true
+    },
+    {
+      "source": "/post/erste-bühnenprobe",
+      "destination": "/blog/erste-buehnenprobe",
+      "permanent": true
+    },
+    {
+      "source": "/post/erste-b%C3%BChnenprobe",
+      "destination": "/blog/erste-buehnenprobe",
+      "permanent": true
+    },
+    {
+      "source": "/post/erste-probe-mit-technik",
+      "destination": "/blog/erste-probe-mit-technik",
+      "permanent": true
+    },
+    {
+      "source": "/post/erster-stockerauer-song-contest",
+      "destination": "/blog/erster-stockerauer-song-contest",
+      "permanent": true
+    },
+    {
+      "source": "/post/technikbesprechung",
+      "destination": "/blog/technikbesprechung",
+      "permanent": true
+    },
+    {
+      "source": "/post/fototag-probe",
+      "destination": "/blog/fototag-probe",
+      "permanent": true
+    },
+    {
+      "source": "/post/wir-sind-in-innsbruck",
+      "destination": "/blog/wir-sind-in-innsbruck",
+      "permanent": true
+    },
+    {
+      "source": "/post/was-f%C3%BCr-eine-tolle-letzte-auff%C3%BChrung",
+      "destination": "/blog/was-fuer-eine-tolle-letzte-auffuehrung",
+      "permanent": true
+    },
+    {
+      "source": "/post/was-für-eine-tolle-letzte-aufführung",
+      "destination": "/blog/was-fuer-eine-tolle-letzte-auffuehrung",
+      "permanent": true
+    },
+    {
+      "source": "/post/schon-ist-die-vorletzte-auff%C3%BChrung-vorbei",
+      "destination": "/blog/schon-ist-die-vorletzte-auffuehrung-vorbei",
+      "permanent": true
+    },
+    {
+      "source": "/post/schon-ist-die-vorletzte-aufführung-vorbei",
+      "destination": "/blog/schon-ist-die-vorletzte-auffuehrung-vorbei",
+      "permanent": true
+    },
+    {
+      "source": "/post/nach-einer-auff%C3%BChrung-ist-vor-einer-auff%C3%BChrung",
+      "destination": "/blog/nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+      "permanent": true
+    },
+    {
+      "source": "/post/nach-einer-aufführung-ist-vor-einer-aufführung",
+      "destination": "/blog/nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+      "permanent": true
+    },
+    {
+      "source": "/post/generalprobe-vor-ausverkauftem-pfarrsaal",
+      "destination": "/blog/generalprobe-vor-ausverkauftem-pfarrsaal",
+      "permanent": true
+    },
+    {
+      "source": "/post/was-für-eine-premiere",
+      "destination": "/blog/was-fuer-eine-premiere",
+      "permanent": true
+    },
+    {
+      "source": "/post/was-f%C3%BCr-eine-premiere",
+      "destination": "/blog/was-fuer-eine-premiere",
+      "permanent": true
+    },
+    {
+      "source": "/post/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurück",
+      "destination": "/blog/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
+      "permanent": true
+    },
+    {
+      "source": "/post/ehemalige-darsteller-innen-kehren-an-ihre-schule-zur%C3%BCck",
+      "destination": "/blog/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
+      "permanent": true
+    },
+    {
+      "source": "/post/proben-zu-wiener-blut-laufen-auf-hochtouren",
+      "destination": "/blog/proben-zu-wiener-blut-laufen-auf-hochtouren",
+      "permanent": true
+    },
+    {
+      "source": "/post/:slug*",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog/categories/:c*",
+      "destination": "/blog",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(img|assets|media)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
