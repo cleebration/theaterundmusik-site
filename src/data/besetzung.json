@@ -1,0 +1,88 @@
+{
+  "_hinweis": "Gepflegt in der Redaktion (Werkzeug „Besetzung“). Je Person: name (Pflicht), instrument, foto, link, text – Leeres erscheint nicht. Nie löschen, nur aktiv=false. Fotos: public/img/personen/.",
+  "personen": [
+    {
+      "id": "manuela-josefine-fichtinger",
+      "name": "Manuela-Josefine Fichtinger",
+      "instrument": {
+        "de": "Klarinette"
+      },
+      "foto": "/img/personen/manuela-josefine-fichtinger.jpg",
+      "reihenfolge": 10,
+      "aktiv": true
+    },
+    {
+      "id": "anna-puskas",
+      "name": "Anna Puskas",
+      "instrument": {
+        "de": "Violoncello"
+      },
+      "foto": "/img/personen/anna-puskas.jpg",
+      "reihenfolge": 20,
+      "aktiv": true
+    },
+    {
+      "id": "chris-h-leeb",
+      "name": "Chris H. Leeb",
+      "instrument": {
+        "de": "Kontrabass"
+      },
+      "foto": "/img/personen/chris-h-leeb.jpg",
+      "link": "https://www.cleebration.com",
+      "reihenfolge": 30,
+      "aktiv": true
+    },
+    {
+      "id": "ernst-rehberger",
+      "name": "Ernst Rehberger",
+      "instrument": {
+        "de": "Gesamtleitung"
+      },
+      "foto": "/img/personen/ernst-rehberger.jpg",
+      "reihenfolge": 40,
+      "aktiv": true
+    },
+    {
+      "id": "josip-maticic",
+      "name": "Josip Matičić",
+      "instrument": {
+        "de": "Violine, Notenarrangement"
+      },
+      "foto": "/img/personen/josip-maticic.jpg",
+      "link": "https://www.youtube.com/watch?v=Ne_JXvRKgJU",
+      "reihenfolge": 50,
+      "aktiv": true
+    },
+    {
+      "id": "eva-breinschmid",
+      "name": "Eva Breinschmid",
+      "instrument": {
+        "de": "Violine"
+      },
+      "foto": "/img/personen/eva-breinschmid.jpg",
+      "link": "https://www.breinschmid.at/",
+      "reihenfolge": 60,
+      "aktiv": true
+    },
+    {
+      "id": "cornelia-schmidt",
+      "name": "Cornelia Schmidt",
+      "instrument": {
+        "de": "Klavier"
+      },
+      "foto": "/img/personen/cornelia-schmidt.jpg",
+      "reihenfolge": 70,
+      "aktiv": true
+    },
+    {
+      "id": "karin-huf",
+      "name": "Karin Huf",
+      "instrument": {
+        "de": "Klarinette"
+      },
+      "foto": "/img/personen/karin-huf.jpg",
+      "reihenfolge": 80,
+      "aktiv": true
+    }
+  ]
+}

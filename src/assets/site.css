@@ -31,10 +31,12 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem)}
 
 /* Kopf */
 .head{background:var(--stage);color:#fff;position:sticky;top:0;z-index:10;border-bottom:3px solid var(--red)}
-.head__bar{display:flex;align-items:center;gap:20px;min-height:72px}
+.head__bar{display:flex;align-items:center;gap:20px;min-height:104px}
 .brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-family:var(--head);font-size:1.05rem;line-height:1.05;margin-right:auto}
-.brand img{width:46px;height:auto}
-.brand strong{font-size:1.35rem;letter-spacing:.02em}
+.brand img{width:96px;height:auto;margin:8px 0;flex-shrink:0}
+.brand strong{font-size:1.6rem;letter-spacing:.02em}
+.brand{font-size:1.2rem}
+@media (max-width:600px){.head__bar{min-height:84px}.brand img{width:68px}.brand strong{font-size:1.3rem}.brand{font-size:1rem}}
 .brand:hover{color:#fff}
 #nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
 #nav a{display:block;color:#fff;text-decoration:none;font-family:var(--head);font-weight:600;font-size:1.08rem;letter-spacing:.04em;text-transform:uppercase;padding:10px 9px;border-radius:6px}
@@ -100,7 +102,10 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem)}
 .person img{border-radius:var(--r);aspect-ratio:3/4;object-fit:cover;width:100%}
 .person figcaption{margin-top:10px;line-height:1.3}
 .person strong{display:block;font-family:var(--head);font-size:1.4rem}
-.person span{color:var(--muted)}
+.person span{color:var(--muted);display:block}
+.person__text{margin:.5em 0 0;font-size:.95rem;line-height:1.45}
+.person strong a{color:inherit;text-decoration:none}.person strong a:hover{color:var(--red)}
+.person--ohne-foto{border-top:3px solid var(--red);padding-top:12px}
 .person{margin:0}
 @media (max-width:900px){.people{grid-template-columns:repeat(2,1fr)}}
 
@@ -137,7 +142,7 @@ h2{font-size:clamp(1.6rem,3vw,2.1rem)}
 .foot{background:var(--stage);color:#ddd;margin-top:80px;padding:44px 0;font-size:.98rem}
 .foot a{color:#fff}
 .foot__grid{display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:start}
-.foot__logo{width:64px}
+.foot__logo{width:120px}
 .foot__links p{margin:.6em 0}
 .credit{color:#fff}
 @media (max-width:700px){.foot__grid{grid-template-columns:1fr}}

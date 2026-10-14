@@ -4,7 +4,7 @@ Website des Talentevereins Theater und Musik des BG/BRG Stockerau – **www.thea
 Seit Oktober 2026 eigene statische Seite statt Wix (Projekt „Music Theater und Music“, Umzug-Doku in
 `1! claude/05 Projekte/Music Theater und Music/Output/Theater-Umzug.md`).
 
-- `public/` – fertige Seite, so wie sie Vercel ausliefert (kein Build-Schritt auf Vercel).
+- `public/` – fertige Seite. Einziger Build-Schritt auf Vercel: `node scripts/besetzung.mjs` (setzt die Besetzung in `/orchester` ein).
 - `vercel.json` – saubere Adressen, Weiterleitungen aller alten Wix-Adressen (`/blank…`, `/post/…`), Cache.
 - `src/site.json` – **die Produktionen** (eine je Schuljahr), aktuelle Produktion, Archivliste, alte Wix-Blogadressen.
 - `src/` – Erzeuger `build_site.py`, Texte (`quotes.json`, `impressum.html`, `datenschutz.html`), `assets/` (CSS, JS, Schriften lokal, Hub-Module, cleebration-Credit).
@@ -20,6 +20,13 @@ Die Seite hat keine eigenen Inhalte dafür. Alles mit `sites: [theaterundmusik]`
 | Fotos | cleebration-gallery-hub | Galerie, z. B. `tum-2027-mariza` |
 
 Eingeben über die Hub-Masken (`/admin/`) oder Claude im Projekt „Music Theater und Music“.
+
+## Besetzung (`/orchester`)
+
+Personen stehen in `src/data/besetzung.json` und werden in der **Redaktion** gepflegt
+(Werkzeug „Besetzung“, wie das Ensemble beim LKO). Je Person: **Name** (Pflicht) · Instrument · Foto · Link · Text –
+was leer ist, erscheint nicht. Gezeigt werden nur `aktiv: true`, nie löschen, nur ausschalten. Fotos: `public/img/personen/`.
+Jeder Push (auch von der Redaktion) → Vercel baut `scripts/besetzung.mjs` → Seite in ca. 1 Minute aktuell.
 
 ## Neue Produktion (jedes Schuljahr)
 

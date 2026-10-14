@@ -25,11 +25,8 @@ E = html.escape
 LOGO = "1ad5fa_a2e0afd8fe1f49c795180a599518f11d"
 
 # ---------------------------------------------------------------- Bilder (nur die der Seite selbst)
-SITE_IMAGES = [LOGO, "1ad5fa_5a9a3458da824997b96f21fc11e09913",
-               "1ad5fa_c34944356c3e4ec3817da2a1014760e1", "1ad5fa_61b1e9d82ee14b05bf8fa6fba152d3f8",
-               "1ad5fa_bc1b2d27c7564ee4b7c5b4855a472461", "1ad5fa_6a81f19867254908b4ff888c118345f3",
-               "1ad5fa_1bd9d65df47c4466906cfe442059bcf9", "1ad5fa_2014c8cf299e4a6a8db1776b95cde119",
-               "1ad5fa_25fbedca2ef94747a6754caf261b552a", "1ad5fa_3bde226b75ac49f7b6263a538118d7f1"]
+# Personenfotos der Besetzung liegen im Repo (public/img/personen, gepflegt in der Redaktion).
+SITE_IMAGES = [LOGO, "1ad5fa_5a9a3458da824997b96f21fc11e09913"]
 for p in S["productions"]:
     SITE_IMAGES += [p[k] for k in ("poster", "videoPoster", "cover") if p.get(k)]
 SIZES = {}
@@ -103,7 +100,7 @@ def page(path, title, body, desc, og=None, active=None, scripts=(), noindex=Fals
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <header class="head">
   <div class="wrap head__bar">
-    <a class="brand" href="/"><img src="/img/t/{LOGO}.png" alt="Musical Oper" width="52" height="55"><span>Talenteverein<br><strong>Theater und Musik</strong></span></a>
+    <a class="brand" href="/"><img src="/img/logo.png" alt="Musical Oper" width="96" height="96"><span>Talenteverein<br><strong>Theater und Musik</strong></span></a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menü</button>
     <nav id="nav" aria-label="Hauptnavigation"><ul>{''.join(lis)}</ul></nav>
   </div>
@@ -113,7 +110,7 @@ def page(path, title, body, desc, og=None, active=None, scripts=(), noindex=Fals
 </main>
 <footer class="foot">
   <div class="wrap foot__grid">
-    <div><img src="/img/t/{LOGO}.png" alt="" width="64" height="68" class="foot__logo"></div>
+    <div><img src="/img/logo.png" alt="" width="120" height="120" class="foot__logo"></div>
     <div>Talenteverein Theater und Musik<br>des BG/BRG Stockerau<br>Unter den Linden 16, 2000 Stockerau<br>
       <a href="mailto:{MAIL}">{MAIL}</a></div>
     <div class="foot__links">
@@ -205,6 +202,7 @@ def build():
     logo = Image.open(os.path.join(MEDIA, "img", LOGO + ".png")).convert("RGBA"); sq = logo.crop(logo.getbbox())
     for n, s in (("favicon.png", 64), ("apple-touch-icon.png", 180)):
         bg = Image.new("RGBA", sq.size, (0, 0, 0, 255)); bg.alpha_composite(sq); bg.convert("RGB").resize((s, s), Image.LANCZOS).save(os.path.join(PUB, n))
+    lg = sq.copy(); lg.thumbnail((400, 400)); lg.save(os.path.join(PUB, "img", "logo.png"), optimize=True)  # Logo ohne Rand
     og = Image.new("RGB", (1200, 630), (17, 17, 17)); l = sq.copy(); l.thumbnail((440, 440)); og.paste(l, (380, 95), l)
     og.save(os.path.join(PUB, "img", "og.jpg"), quality=85)
 
@@ -270,24 +268,14 @@ def build():
 <h2 class="sec">Frühere Produktionen</h2><ol class="shows" reversed>{rows}</ol></div>"""
     write("/archiv", page("/archiv", "Archiv", body, "Alle Produktionen der Musical Oper am BG/BRG Stockerau seit 2001/2002.", active="/archiv"))
 
-    # ---- Orchester
-    ORCH = [("Manuela-Josefine Fichtinger", "Klarinette", "1ad5fa_c34944356c3e4ec3817da2a1014760e1", None),
-            ("Anna Puskas", "Violoncello", "1ad5fa_61b1e9d82ee14b05bf8fa6fba152d3f8", None),
-            ("Chris H. Leeb", "Kontrabass", "1ad5fa_bc1b2d27c7564ee4b7c5b4855a472461", "https://www.cleebration.com"),
-            ("Ernst Rehberger", "Gesamtleitung", "1ad5fa_6a81f19867254908b4ff888c118345f3", None),
-            ("Josip Matičić", "Violine, Notenarrangement", "1ad5fa_1bd9d65df47c4466906cfe442059bcf9", "https://www.youtube.com/watch?v=Ne_JXvRKgJU"),
-            ("Eva Breinschmid", "Violine", "1ad5fa_2014c8cf299e4a6a8db1776b95cde119", "https://www.breinschmid.at/"),
-            ("Cornelia Schmidt", "Klavier", "1ad5fa_25fbedca2ef94747a6754caf261b552a", None),
-            ("Karin Huf", "Klarinette", "1ad5fa_3bde226b75ac49f7b6263a538118d7f1", None)]
-    cards = []
-    for n, i, b, link in ORCH:
-        im = img(b, n, thumb=True)
-        if link: im = f'<a href="{link}" rel="noopener" target="_blank">{im}</a>'
-        cards.append(f'<figure class="person">{im}<figcaption><strong>{E(n)}</strong><span>{E(i)}</span></figcaption></figure>')
+    # ---- Orchester: Personen kommen aus src/data/besetzung.json (Redaktion → Werkzeug „Besetzung“),
+    #      eingesetzt von scripts/besetzung.mjs zwischen den Markierungen (bei jedem Vercel-Deploy).
+    pers = os.path.join(HERE, "..", "public", "img", "personen")
+    if os.path.isdir(pers): shutil.copytree(pers, os.path.join(PUB, "img", "personen"))
     ens = "1ad5fa_5a9a3458da824997b96f21fc11e09913"
     body = f'''<h1 class="page-title">Orchester</h1><div class="wrap">
 <figure class="fig fig--wide"><a href="{src(ens)}" data-lightbox>{img(ens, "Ensemble Unter den Linden")}</a><figcaption>Ensemble „Unter den Linden“</figcaption></figure>
-<div class="people">{"".join(cards)}</div></div>'''
+<!-- besetzung:start --><!-- besetzung:end --></div>'''
     write("/orchester", page("/orchester", "Orchester", body, "Das Orchester „Unter den Linden“ begleitet die Produktionen des Talentevereins Theater und Musik.", og=ens, active="/orchester"))
 
     # ---- Über uns
@@ -319,7 +307,7 @@ def build():
     redirects += [{"source": "/blog/:slug", "destination": "/post?post=:slug", "permanent": True},
                   {"source": "/post/:slug*", "destination": "/blog", "permanent": True},
                   {"source": "/blog/categories/:c*", "destination": "/blog", "permanent": True}]
-    cfg = {"$schema": "https://openapi.vercel.sh/vercel.json", "cleanUrls": True, "trailingSlash": False, "redirects": redirects,
+    cfg = {"$schema": "https://openapi.vercel.sh/vercel.json", "buildCommand": "node scripts/besetzung.mjs", "outputDirectory": "public", "cleanUrls": True, "trailingSlash": False, "redirects": redirects,
            "headers": [{"source": "/(img|assets|media)/(.*)", "headers": [{"key": "Cache-Control", "value": "public, max-age=31536000, immutable"}]},
                        {"source": "/(.*)", "headers": [{"key": "X-Content-Type-Options", "value": "nosniff"}, {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"}]}]}
     json.dump(cfg, open(os.path.join(OUT, "vercel.json"), "w"), ensure_ascii=False, indent=2)
@@ -327,6 +315,8 @@ def build():
     urls = ["/", "/termine", "/blog", "/bildergalerie", "/archiv", "/orchester", "/ueber-uns", "/impressum", "/datenschutz"] + [f"/produktion/{p['key']}" for p in S["productions"]]
     open(os.path.join(PUB, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{SITE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
     open(os.path.join(PUB, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
+    import subprocess
+    subprocess.run(["node", os.path.join(HERE, "..", "scripts", "besetzung.mjs"), PUB], check=True)
     print("ok –", len(S["productions"]), "Produktionen,", len(SIZES), "Bilder der Seite")
 
 build()
