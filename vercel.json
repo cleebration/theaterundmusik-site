@@ -30,107 +30,122 @@
     },
     {
       "source": "/dasdoppeltelottchen",
-      "destination": "/das-doppelte-lottchen",
+      "destination": "/produktion/das-doppelte-lottchen-2026",
       "permanent": true
     },
     {
       "source": "/blank-5",
-      "destination": "/wiener-blut",
+      "destination": "/produktion/wiener-blut-2025",
+      "permanent": true
+    },
+    {
+      "source": "/das-doppelte-lottchen",
+      "destination": "/produktion/das-doppelte-lottchen-2026",
+      "permanent": true
+    },
+    {
+      "source": "/wiener-blut",
+      "destination": "/produktion/wiener-blut-2025",
       "permanent": true
     },
     {
       "source": "/post/erste-bühnenprobe",
-      "destination": "/blog/erste-buehnenprobe",
+      "destination": "/post?post=erste-buehnenprobe",
       "permanent": true
     },
     {
       "source": "/post/erste-b%C3%BChnenprobe",
-      "destination": "/blog/erste-buehnenprobe",
+      "destination": "/post?post=erste-buehnenprobe",
       "permanent": true
     },
     {
       "source": "/post/erste-probe-mit-technik",
-      "destination": "/blog/erste-probe-mit-technik",
+      "destination": "/post?post=erste-probe-mit-technik",
       "permanent": true
     },
     {
       "source": "/post/erster-stockerauer-song-contest",
-      "destination": "/blog/erster-stockerauer-song-contest",
+      "destination": "/post?post=erster-stockerauer-song-contest",
       "permanent": true
     },
     {
       "source": "/post/technikbesprechung",
-      "destination": "/blog/technikbesprechung",
+      "destination": "/post?post=technikbesprechung",
       "permanent": true
     },
     {
       "source": "/post/fototag-probe",
-      "destination": "/blog/fototag-probe",
+      "destination": "/post?post=fototag-probe",
       "permanent": true
     },
     {
       "source": "/post/wir-sind-in-innsbruck",
-      "destination": "/blog/wir-sind-in-innsbruck",
-      "permanent": true
-    },
-    {
-      "source": "/post/was-f%C3%BCr-eine-tolle-letzte-auff%C3%BChrung",
-      "destination": "/blog/was-fuer-eine-tolle-letzte-auffuehrung",
+      "destination": "/post?post=wir-sind-in-innsbruck",
       "permanent": true
     },
     {
       "source": "/post/was-für-eine-tolle-letzte-aufführung",
-      "destination": "/blog/was-fuer-eine-tolle-letzte-auffuehrung",
+      "destination": "/post?post=was-fuer-eine-tolle-letzte-auffuehrung",
       "permanent": true
     },
     {
-      "source": "/post/schon-ist-die-vorletzte-auff%C3%BChrung-vorbei",
-      "destination": "/blog/schon-ist-die-vorletzte-auffuehrung-vorbei",
+      "source": "/post/was-f%C3%BCr-eine-tolle-letzte-auff%C3%BChrung",
+      "destination": "/post?post=was-fuer-eine-tolle-letzte-auffuehrung",
       "permanent": true
     },
     {
       "source": "/post/schon-ist-die-vorletzte-aufführung-vorbei",
-      "destination": "/blog/schon-ist-die-vorletzte-auffuehrung-vorbei",
+      "destination": "/post?post=schon-ist-die-vorletzte-auffuehrung-vorbei",
       "permanent": true
     },
     {
-      "source": "/post/nach-einer-auff%C3%BChrung-ist-vor-einer-auff%C3%BChrung",
-      "destination": "/blog/nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+      "source": "/post/schon-ist-die-vorletzte-auff%C3%BChrung-vorbei",
+      "destination": "/post?post=schon-ist-die-vorletzte-auffuehrung-vorbei",
       "permanent": true
     },
     {
       "source": "/post/nach-einer-aufführung-ist-vor-einer-aufführung",
-      "destination": "/blog/nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+      "destination": "/post?post=nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+      "permanent": true
+    },
+    {
+      "source": "/post/nach-einer-auff%C3%BChrung-ist-vor-einer-auff%C3%BChrung",
+      "destination": "/post?post=nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
       "permanent": true
     },
     {
       "source": "/post/generalprobe-vor-ausverkauftem-pfarrsaal",
-      "destination": "/blog/generalprobe-vor-ausverkauftem-pfarrsaal",
+      "destination": "/post?post=generalprobe-vor-ausverkauftem-pfarrsaal",
       "permanent": true
     },
     {
       "source": "/post/was-für-eine-premiere",
-      "destination": "/blog/was-fuer-eine-premiere",
+      "destination": "/post?post=was-fuer-eine-premiere",
       "permanent": true
     },
     {
       "source": "/post/was-f%C3%BCr-eine-premiere",
-      "destination": "/blog/was-fuer-eine-premiere",
+      "destination": "/post?post=was-fuer-eine-premiere",
       "permanent": true
     },
     {
       "source": "/post/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurück",
-      "destination": "/blog/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
+      "destination": "/post?post=ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
       "permanent": true
     },
     {
       "source": "/post/ehemalige-darsteller-innen-kehren-an-ihre-schule-zur%C3%BCck",
-      "destination": "/blog/ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
+      "destination": "/post?post=ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
       "permanent": true
     },
     {
       "source": "/post/proben-zu-wiener-blut-laufen-auf-hochtouren",
-      "destination": "/blog/proben-zu-wiener-blut-laufen-auf-hochtouren",
+      "destination": "/post?post=proben-zu-wiener-blut-laufen-auf-hochtouren",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/post?post=:slug",
       "permanent": true
     },
     {

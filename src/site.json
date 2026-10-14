@@ -1,0 +1,77 @@
+{
+  "_hinweis": "Zentrale Daten der Seite. Jedes Schuljahr eine Produktion: neuen Eintrag OBEN in 'productions' anlegen, 'current' auf den neuen key setzen, die alte bleibt automatisch im Archiv. Termine, Beiträge und Fotos kommen aus den cleebration-Hubs (sites: theaterundmusik) – gefiltert nach Schuljahr (Termine), Schlagwort = key (Blog) und Galerie (Fotos). Danach: python3 src/build_site.py <Medienordner> <Ziel> (siehe README).",
+  "siteUrl": "https://www.theaterundmusik.at",
+  "mail": "ernst.rehberger@bildung.gv.at",
+  "feeds": {
+    "events": "https://cleebration-events-hub.vercel.app/feed/sites/theaterundmusik.{lang}.json",
+    "blog": "https://cleebration-blog-hub.vercel.app/feed/sites/theaterundmusik.{lang}.json",
+    "gallery": "https://cleebration-gallery-hub.vercel.app/feed/sites/theaterundmusik.{lang}.json"
+  },
+  "current": "graefin-mariza-2027",
+  "productions": [
+    {
+      "key": "graefin-mariza-2027",
+      "title": "Gräfin Mariza",
+      "season": "2026/27",
+      "from": "2026-09-01",
+      "to": "2027-08-31",
+      "subtitle": "Operette von Emmerich Kálmán",
+      "gallery": "tum-2027-mariza",
+      "text": ["Im Schuljahr 2026/27 bringen wir die Operette „Gräfin Mariza“ von Emmerich Kálmán auf die Bühne.", "Termine und Karten folgen."]
+    },
+    {
+      "key": "das-doppelte-lottchen-2026",
+      "title": "Das doppelte Lottchen",
+      "season": "2025/26",
+      "from": "2025-09-01",
+      "to": "2026-08-31",
+      "dates": "20. – 25. Juni 2026",
+      "subtitle": "Theater mit Musik nach Erich Kästner",
+      "gallery": "tum-2026-lottchen",
+      "poster": "c8d331_a026076bc5c44bdb963a1ff273d426d5",
+      "posterPdf": "/media/plakat-das-doppelte-lottchen.pdf",
+      "video": "/media/das-doppelte-lottchen.mp4",
+      "videoPoster": "1ad5fa_562b28ae08e841e894ea1b4d1664d6b1f001",
+      "text": ["In diesem Schuljahr 2025/2026 führen wir das Stück „Das doppelte Lottchen“ von Erich Kästner auf. Das erstmals 1950 erschienene Buch wird von uns, dank des Theaterstücks des Bühnenverlags Weitendorf, vorgetragen und mit selbst komponierter Musik von Josip Matičić und Ernst Rehberger begleitet. Wir sind schon sehr gespannt, arbeiten und proben fleißig und hoffen, dass unser Projekt ein großer Erfolg wird. Wir freuen uns, Sie auch dieses Mal bei unseren Vorstellungen begrüßen zu dürfen."],
+      "signature": "Nicolas Bolvari / Michael Fitz",
+      "venue": "Pfarrzentrum Stockerau, Kirchenplatz 3, 2000 Stockerau"
+    },
+    {
+      "key": "wiener-blut-2025",
+      "title": "Wiener Blut",
+      "season": "2024/25",
+      "from": "2024-09-01",
+      "to": "2025-08-31",
+      "dates": "Juni 2025 · Reise nach Innsbruck 19. – 22. Juni 2025",
+      "subtitle": "Operette von Johann Strauss",
+      "gallery": "tum-2025-wiener-blut",
+      "cover": "1ad5fa_b3dc824f49454cc78004e7c35dca463b",
+      "text": ["Das Schuljahr 2024/2025 war ein wunderschönes Jahr für die Unverbindliche Übung Musical Oper. Im Johann Strauß Jahr stand heuer die Operette „Wiener Blut“ am Programm. Nach acht sehr erfolgreichen Aufführungen folgte von 19. bis 22. Juni 2025 die traditionelle Musical Oper Reise nach Innsbruck. Wir durften Tirol bei herrlichstem Wetter genießen."],
+      "signature": "MMag. Ernst Rehberger",
+      "quotes": "quotes.json"
+    }
+  ],
+  "earlier": [
+    "2001/2002 Hänsel und Gretel", "2002/2003 Der verlorene Sohn", "2003/2004 Die sonderbare Nacht", "2004/2005 Max und Moritz",
+    "2005/2006 Suleilas erste Weihnacht", "2006/2007 Die Zauberflöte", "2007/2008 Lumpazivagabundus", "2008/2009 Der Bauer als Millionär",
+    "2009/2010 Im weißen Rössl", "2010/2011 Die Fledermaus", "2011/2012 Gräfin Mariza", "2012/2013 Der Vogelhändler",
+    "2013/2014 My Fair Lady", "2014/2015 Wiener Blut", "2015/2016 Im weißen Rössl", "2016/2017 Hallo Dienstmann",
+    "2017/2018 My Fair Lady", "2018/2019 Emil und die Detektive", "2019/2020 Der Vogelhändler", "2020/2021 Pension Schöller",
+    "2021/2022 Der Bauer als Millionär", "2022/2023 Pünktchen und Anton", "2023/2024 Im weißen Rössl"
+  ],
+  "wixPosts": {
+    "erste-bühnenprobe": "erste-buehnenprobe",
+    "erste-probe-mit-technik": "erste-probe-mit-technik",
+    "erster-stockerauer-song-contest": "erster-stockerauer-song-contest",
+    "technikbesprechung": "technikbesprechung",
+    "fototag-probe": "fototag-probe",
+    "wir-sind-in-innsbruck": "wir-sind-in-innsbruck",
+    "was-für-eine-tolle-letzte-aufführung": "was-fuer-eine-tolle-letzte-auffuehrung",
+    "schon-ist-die-vorletzte-aufführung-vorbei": "schon-ist-die-vorletzte-auffuehrung-vorbei",
+    "nach-einer-aufführung-ist-vor-einer-aufführung": "nach-einer-auffuehrung-ist-vor-einer-auffuehrung",
+    "generalprobe-vor-ausverkauftem-pfarrsaal": "generalprobe-vor-ausverkauftem-pfarrsaal",
+    "was-für-eine-premiere": "was-fuer-eine-premiere",
+    "ehemalige-darsteller-innen-kehren-an-ihre-schule-zurück": "ehemalige-darsteller-innen-kehren-an-ihre-schule-zurueck",
+    "proben-zu-wiener-blut-laufen-auf-hochtouren": "proben-zu-wiener-blut-laufen-auf-hochtouren"
+  }
+}
