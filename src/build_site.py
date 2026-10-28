@@ -95,6 +95,7 @@ def page(path, title, body, desc, og=None, active=None, scripts=(), noindex=Fals
 <link rel="stylesheet" href="/assets/site.css">
 <script src="/assets/site.js" defer></script>
 <script type="module" src="/assets/brand/cleebration-credit.js"></script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "1524713682f74e5ab30b74b4463c151c"}}'></script><!-- End Cloudflare Web Analytics -->
 {script_tags}</head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
